@@ -22,7 +22,7 @@ def greet():
 
 
 # ML Aspect
-@app.post('/predict')
+@app.get('/predict')
 async def predict(reg: Website):
     feat = [reg.url]
     feature = feat
