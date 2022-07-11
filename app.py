@@ -11,21 +11,24 @@ phish_model = open('phishing.pkl', 'rb')
 phish_model_ls = joblib.load(phish_model)
 
 
+@app.get("/{name}")
+def hello(name):
+    return {"Hello {} and Welcome to this API".format(name)}
+
+
 @app.get("/")
 def greet():
     return {"Hello World"}
 
-app = FastAPI()
-#pkl
-phish_model = open('phishing.pkl', 'rb')
-phish_model_ls = joblib.load(phish_model)
 
-#ML Aspect
+# ML Aspect
 @app.post('/predict')
-async def predict(features):
-	url = []
-	url.append(str(features))
-	probab = phish_model_ls.predict(feature)
+async def predict(reg: Website):
+    feat = [reg.url]
+    feature = feat
+
+    y_Predict = phish_model_ls.predict(feature)
+    probab = phish_model_ls.predict(feature)
 
     if(y_Predict==1):
         return {"Class": "{This is a phishing site}"}
