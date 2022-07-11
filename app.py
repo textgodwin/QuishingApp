@@ -25,12 +25,12 @@ phish_model_ls = joblib.load(phish_model)
 async def predict(features):
 	url = []
 	url.append(str(features))
-	y_Predict = phish_model_ls.predict(url)
-	if y_Predict == 1:
-		result = "This is a phishing Site"
-	else:
-		result = "This is a legitimate Site"
-	return result
+	probab = phish_model_ls.predict(feature)
+
+    if(y_Predict==1):
+        return {"Class": "{This is a phishing site}"}
+    else:
+        return {"Class": "{This is a legitimate site}"}
 
 
 if __name__ == "__main__":
