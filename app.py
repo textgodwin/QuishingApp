@@ -11,11 +11,6 @@ phish_model = open('phishing.pkl', 'rb')
 phish_model_ls = joblib.load(phish_model)
 
 
-@app.get("/{name}")
-def hello(name):
-    return {"Hello {} and Welcome to this API".format(name)}
-
-
 @app.get("/")
 def greet():
     return {"Hello World"}
