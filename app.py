@@ -22,9 +22,9 @@ phish_model_ls = joblib.load(phish_model)
 
 #ML Aspect
 @app.post('/predict')
-async def predict():
+async def predict(features):
 	url = []
-	url.append(str(url))
+	url.append(str(features))
 	y_Predict = phish_model_ls.predict(url)
 	if y_Predict == 1:
 		result = "This is a phishing Site"
