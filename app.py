@@ -21,7 +21,7 @@ phish_model = open('phishing.pkl', 'rb')
 phish_model_ls = joblib.load(phish_model)
 
 #ML Aspect
-@app.get('/predict')
+@app.post('/predict')
 async def predict(features):
 	url = []
 	url.append(str(features))
