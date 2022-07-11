@@ -31,9 +31,9 @@ async def predict(reg: Website):
     
 
     if(y_Predict==1):
-        return "Class": "{This is a phishing site}"
+        return "Class": "This is a phishing site"
     else:
-        return "Class": "{This is a legitimate site}"
+        return "Class": "This is a legitimate site"
 
 
 if __name__ == "__main__":
