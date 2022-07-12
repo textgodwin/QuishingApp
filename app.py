@@ -31,9 +31,9 @@ async def predict(reg: Website):
     probab = phish_model_ls.predict(feature)
 
     if(y_Predict==1):
-        return {"class": "{This is a phishing site}"}
+        return {"type": "{This is a phishing site}"}
     else:
-        return {"class": "{This is a legitimate site}"}
+        return {"type": "{This is a legitimate site}"}
 
 
 if __name__ == "__main__":
